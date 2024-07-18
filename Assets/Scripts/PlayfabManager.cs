@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using GooglePlayGames;
 using Newtonsoft.Json;
 using PlayFab;
 using PlayFab.ClientModels;
@@ -162,17 +161,21 @@ public static class PlayfabManager
 		{
 			if (PlayfabManager.didEverGetAutCode)
 			{
-				PlayGamesPlatform.Instance.GetAnotherServerAuthCode(false, delegate (string code)
+#if UNITY_ANDROID
+				GooglePlayGames.PlayGamesPlatform.Instance.GetAnotherServerAuthCode(false, delegate (string code)
 				{
 					UnityEngine.Debug.Log("Auth code: " + code);
 					callback(code);
 				});
+#endif
 			}
 			else
 			{
-				string serverAuthCode = PlayGamesPlatform.Instance.GetServerAuthCode();
+#if UNITY_ANDROID
+				string serverAuthCode = GooglePlayGames.PlayGamesPlatform.Instance.GetServerAuthCode();
 				PlayfabManager.didEverGetAutCode = true;
 				callback(serverAuthCode);
+#endif
 			}
 		}
 		catch (Exception ex)
@@ -251,9 +254,9 @@ public static class PlayfabManager
 			callback();
 		}
 		PlayfabManager.LoginCustom(callback, showPlayfabCustomLoginWarning);
-    }
+	}
 
-	
+
 
 	public static void Update()
 	{
@@ -290,7 +293,7 @@ public static class PlayfabManager
 				GetPlayerProfile = true
 			}
 		};
-		PlayFabClientAPI.LoginWithCustomID(request, delegate(LoginResult res)
+		PlayFabClientAPI.LoginWithCustomID(request, delegate (LoginResult res)
 		{
 			PlayfabManager.loginState = PlayfabManager.LoginState.COMPLETED_SUCCESS_CUSTOM;
 			if (showPlayfabCustomLoginWarning && !Main.dontStoreAuthenticate)
@@ -306,16 +309,16 @@ public static class PlayfabManager
 					ShowCreated = true
 				}
 			};
-			PlayFabClientAPI.GetPlayerProfile(request2, delegate(GetPlayerProfileResult profile)
+			PlayFabClientAPI.GetPlayerProfile(request2, delegate (GetPlayerProfileResult profile)
 			{
 				PlayerStats.LoadPlayerLocations(profile.PlayerProfile.Locations);
 				PlayfabManager.OnGodPlayerProfile(profile);
-			}, delegate(PlayFabError error)
+			}, delegate (PlayFabError error)
 			{
 			}, null, null);
 			PlayerStats.LoadPayerStatus(res.InfoResultPayload.PlayerProfile);
 			PlayfabManager.OnLoginSuccess(res, callback);
-		}, delegate(PlayFabError err)
+		}, delegate (PlayFabError err)
 		{
 			PlayfabManager.loginState = PlayfabManager.LoginState.COMPLETED_FAIL;
 			callback();
@@ -335,7 +338,7 @@ public static class PlayfabManager
 				GetPlayerProfile = true
 			}
 		};
-		PlayFabClientAPI.LoginWithGameCenter(request, delegate(LoginResult res)
+		PlayFabClientAPI.LoginWithGameCenter(request, delegate (LoginResult res)
 		{
 			UnityEngine.Debug.Log("Playfab: Login via game center is succesful.");
 			PlayfabManager.loginState = PlayfabManager.LoginState.COMPLETED_SUCCESS_VIA_STORE;
@@ -348,16 +351,16 @@ public static class PlayfabManager
 					ShowCreated = true
 				}
 			};
-			PlayFabClientAPI.GetPlayerProfile(request2, delegate(GetPlayerProfileResult profile)
+			PlayFabClientAPI.GetPlayerProfile(request2, delegate (GetPlayerProfileResult profile)
 			{
 				PlayerStats.LoadPlayerLocations(profile.PlayerProfile.Locations);
 				PlayfabManager.OnGodPlayerProfile(profile);
-			}, delegate(PlayFabError error)
+			}, delegate (PlayFabError error)
 			{
 			}, null, null);
 			PlayerStats.LoadPayerStatus(res.InfoResultPayload.PlayerProfile);
 			PlayfabManager.OnLoginSuccess(res, callback);
-		}, delegate(PlayFabError error)
+		}, delegate (PlayFabError error)
 		{
 			UnityEngine.Debug.Log("Playfab: Error loging in via gameCenter " + error.ErrorMessage);
 			PlayfabManager.LoginCustom(callback, showPlayfabCustomLoginWarning);
@@ -377,7 +380,7 @@ public static class PlayfabManager
 				GetPlayerProfile = true
 			}
 		};
-		PlayFabClientAPI.LoginWithGoogleAccount(request, delegate(LoginResult res)
+		PlayFabClientAPI.LoginWithGoogleAccount(request, delegate (LoginResult res)
 		{
 			UnityEngine.Debug.Log("Playfab: Login via google is successful.");
 			PlayfabManager.loginState = PlayfabManager.LoginState.COMPLETED_SUCCESS_VIA_STORE;
@@ -390,16 +393,16 @@ public static class PlayfabManager
 					ShowCreated = true
 				}
 			};
-			PlayFabClientAPI.GetPlayerProfile(request2, delegate(GetPlayerProfileResult profile)
+			PlayFabClientAPI.GetPlayerProfile(request2, delegate (GetPlayerProfileResult profile)
 			{
 				PlayerStats.LoadPlayerLocations(profile.PlayerProfile.Locations);
 				PlayfabManager.OnGodPlayerProfile(profile);
-			}, delegate(PlayFabError error)
+			}, delegate (PlayFabError error)
 			{
 			}, null, null);
 			PlayerStats.LoadPayerStatus(res.InfoResultPayload.PlayerProfile);
 			PlayfabManager.OnLoginSuccess(res, callback);
-		}, delegate(PlayFabError error)
+		}, delegate (PlayFabError error)
 		{
 			UnityEngine.Debug.Log("Playfab: Error logging in via google: " + error.ErrorMessage);
 			PlayfabManager.LoginCustom(callback, showPlayfabCustomLoginWarning);
@@ -440,7 +443,7 @@ public static class PlayfabManager
 			bool flag = false;
 			if (!flag && PlayfabManager.HaveLoggedIn())
 			{
-				PlayfabManager.AskPlayerData(delegate(bool isSuccess, SaveData t1, PlayfabManager.RewardData t2)
+				PlayfabManager.AskPlayerData(delegate (bool isSuccess, SaveData t1, PlayfabManager.RewardData t2)
 				{
 					callback(isSuccess);
 				});
@@ -468,7 +471,7 @@ public static class PlayfabManager
 	{
 		try
 		{
-			PlayFabClientAPI.GetTitleNews(new GetTitleNewsRequest(), delegate(GetTitleNewsResult result)
+			PlayFabClientAPI.GetTitleNews(new GetTitleNewsRequest(), delegate (GetTitleNewsResult result)
 			{
 				List<PlayfabManager.NewsData> list = new List<PlayfabManager.NewsData>();
 				foreach (TitleNewsItem titleNewsItem in result.News)
@@ -480,7 +483,7 @@ public static class PlayfabManager
 					});
 				}
 				callback(list);
-			}, delegate(PlayFabError error)
+			}, delegate (PlayFabError error)
 			{
 				UnityEngine.Debug.Log("Error while Asking title news: " + error.ErrorMessage);
 			}, null, null);
@@ -533,10 +536,10 @@ public static class PlayfabManager
 				"reward"
 			}
 		};
-		PlayFabClientAPI.GetUserData(req, delegate(GetUserDataResult res)
+		PlayFabClientAPI.GetUserData(req, delegate (GetUserDataResult res)
 		{
 			PlayfabManager.OnGotPlayerData(res, callback);
-		}, delegate(PlayFabError err)
+		}, delegate (PlayFabError err)
 		{
 			StoreManager.Authenticate(false, delegate
 			{
@@ -548,10 +551,10 @@ public static class PlayfabManager
 					}
 					else
 					{
-						PlayFabClientAPI.GetUserData(req, delegate(GetUserDataResult res)
+						PlayFabClientAPI.GetUserData(req, delegate (GetUserDataResult res)
 						{
 							PlayfabManager.OnGotPlayerData(res, callback);
-						}, delegate(PlayFabError err2)
+						}, delegate (PlayFabError err2)
 						{
 							callback(false, null, null);
 						}, null, null);
@@ -678,25 +681,25 @@ public static class PlayfabManager
 
 	private static void SaveAfterLogin(UpdateUserDataRequest req, Action onSuccess)
 	{
-		PlayFabClientAPI.UpdateUserData(req, delegate(UpdateUserDataResult res)
+		PlayFabClientAPI.UpdateUserData(req, delegate (UpdateUserDataResult res)
 		{
 			if (onSuccess != null)
 			{
 				onSuccess();
 			}
-		}, delegate(PlayFabError err)
+		}, delegate (PlayFabError err)
 		{
 			StoreManager.Authenticate(false, delegate
 			{
 				PlayfabManager.Login(delegate
 				{
-					PlayFabClientAPI.UpdateUserData(req, delegate(UpdateUserDataResult r)
+					PlayFabClientAPI.UpdateUserData(req, delegate (UpdateUserDataResult r)
 					{
 						if (onSuccess != null)
 						{
 							onSuccess();
 						}
-					}, delegate(PlayFabError e)
+					}, delegate (PlayFabError e)
 					{
 					}, null, null);
 				}, true);
@@ -750,22 +753,22 @@ public static class PlayfabManager
 				}
 			}
 		};
-		PlayFabClientAPI.UpdateUserData(req, delegate(UpdateUserDataResult res)
+		PlayFabClientAPI.UpdateUserData(req, delegate (UpdateUserDataResult res)
 		{
 			UnityEngine.Debug.Log("Playfab: Erased reward successfully.");
 			callback(true);
-		}, delegate(PlayFabError err)
+		}, delegate (PlayFabError err)
 		{
 			UnityEngine.Debug.Log("Playfab: Error while erasing reward: " + err.ErrorMessage);
 			StoreManager.Authenticate(false, delegate
 			{
 				PlayfabManager.Login(delegate
 				{
-					PlayFabClientAPI.UpdateUserData(req, delegate(UpdateUserDataResult r)
+					PlayFabClientAPI.UpdateUserData(req, delegate (UpdateUserDataResult r)
 					{
 						UnityEngine.Debug.Log("Playfab: Erase Reward Success at Try#2");
 						callback(true);
-					}, delegate(PlayFabError e)
+					}, delegate (PlayFabError e)
 					{
 						UnityEngine.Debug.Log("Playfab: Error during Erase Reward Try#2: " + e.ErrorMessage);
 						callback(false);
@@ -811,21 +814,21 @@ public static class PlayfabManager
 				"patchnotes"
 			}
 		};
-		PlayFabClientAPI.GetTitleData(req, delegate(GetTitleDataResult res)
+		PlayFabClientAPI.GetTitleData(req, delegate (GetTitleDataResult res)
 		{
 			PlayfabManager.OnReceivedTitleData(res);
-		}, delegate(PlayFabError err)
+		}, delegate (PlayFabError err)
 		{
 			UnityEngine.Debug.Log("Playfab: Error while getting titleData: " + err.ErrorMessage);
 			StoreManager.Authenticate(false, delegate
 			{
 				PlayfabManager.Login(delegate
 				{
-					PlayFabClientAPI.GetTitleData(req, delegate(GetTitleDataResult res)
+					PlayFabClientAPI.GetTitleData(req, delegate (GetTitleDataResult res)
 					{
 						UnityEngine.Debug.Log("Playfab: Got titleData at try#2");
 						PlayfabManager.OnReceivedTitleData(res);
-					}, delegate(PlayFabError e)
+					}, delegate (PlayFabError e)
 					{
 						UnityEngine.Debug.Log("Playfab: Error while getting titleData at try#2: " + err.ErrorMessage);
 					}, null, null);
@@ -955,13 +958,13 @@ public static class PlayfabManager
 			EventName = eventName,
 			Body = body
 		};
-		PlayFabClientAPI.WritePlayerEvent(request, delegate(WriteEventResponse res)
+		PlayFabClientAPI.WritePlayerEvent(request, delegate (WriteEventResponse res)
 		{
 			if (resultCallback != null)
 			{
 				resultCallback(res);
 			}
-		}, delegate(PlayFabError err)
+		}, delegate (PlayFabError err)
 		{
 			UnityEngine.Debug.Log("Playfab: Error while sending player event: " + err.ErrorMessage);
 			if (errorCallback != null)
@@ -1016,10 +1019,10 @@ public static class PlayfabManager
 				}
 			}
 		};
-		PlayFabClientAPI.WritePlayerEvent(request, delegate(WriteEventResponse res)
+		PlayFabClientAPI.WritePlayerEvent(request, delegate (WriteEventResponse res)
 		{
 			UnityEngine.Debug.Log("Playfab: Sent player puchase event successfully.");
-		}, delegate(PlayFabError err)
+		}, delegate (PlayFabError err)
 		{
 			UnityEngine.Debug.Log("Playfab: Error while sending player puchase event: " + err.ErrorMessage);
 		}, null, null);
@@ -1041,7 +1044,7 @@ public static class PlayfabManager
 		body.Add("tokens_spent", PlayerStats.spentTokens);
 	}
 
-	
+
 
 	public static IEnumerator AskValidationToBee(WWWForm post, Action<PlayfabManager.IapValidationResult> callback, Product product, string receipt, string transactionID)
 	{
@@ -1135,10 +1138,10 @@ public static class PlayfabManager
 			CurrencyCode = currencyCode,
 			PurchasePrice = purchasePrice
 		};
-		PlayFabClientAPI.ValidateIOSReceipt(req, delegate(ValidateIOSReceiptResult res)
+		PlayFabClientAPI.ValidateIOSReceipt(req, delegate (ValidateIOSReceiptResult res)
 		{
 			callback(PlayfabManager.IapValidationResult.Success);
-		}, delegate(PlayFabError err)
+		}, delegate (PlayFabError err)
 		{
 			if (err.Error == PlayFabErrorCode.Success)
 			{
@@ -1154,11 +1157,11 @@ public static class PlayfabManager
 				{
 					PlayfabManager.Login(delegate
 					{
-						PlayFabClientAPI.ValidateIOSReceipt(req, delegate(ValidateIOSReceiptResult r)
+						PlayFabClientAPI.ValidateIOSReceipt(req, delegate (ValidateIOSReceiptResult r)
 						{
 							UnityEngine.Debug.Log("Playfab: Validated receipt at Try#2");
 							callback(PlayfabManager.IapValidationResult.Success);
-						}, delegate(PlayFabError e)
+						}, delegate (PlayFabError e)
 						{
 							PlayfabManager.IapValidationErrorCallback(callback, e);
 						}, null, null);
@@ -1248,10 +1251,10 @@ public static class PlayfabManager
 			CurrencyCode = currencyCode,
 			PurchasePrice = new uint?(purchasePrice)
 		};
-		PlayFabClientAPI.ValidateGooglePlayPurchase(req, delegate(ValidateGooglePlayPurchaseResult res)
+		PlayFabClientAPI.ValidateGooglePlayPurchase(req, delegate (ValidateGooglePlayPurchaseResult res)
 		{
 			callback(PlayfabManager.IapValidationResult.Success);
-		}, delegate(PlayFabError err)
+		}, delegate (PlayFabError err)
 		{
 			if (err.Error == PlayFabErrorCode.Success)
 			{
@@ -1267,11 +1270,11 @@ public static class PlayfabManager
 				{
 					PlayfabManager.Login(delegate
 					{
-						PlayFabClientAPI.ValidateGooglePlayPurchase(req, delegate(ValidateGooglePlayPurchaseResult r)
+						PlayFabClientAPI.ValidateGooglePlayPurchase(req, delegate (ValidateGooglePlayPurchaseResult r)
 						{
 							UnityEngine.Debug.Log("Playfab: Validated receipt at Try#2");
 							callback(PlayfabManager.IapValidationResult.Success);
-						}, delegate(PlayFabError e)
+						}, delegate (PlayFabError e)
 						{
 							PlayfabManager.IapValidationErrorCallback(callback, e);
 						}, null, null);
@@ -1343,12 +1346,12 @@ public static class PlayfabManager
 	private static void GetTimeAfterLogin()
 	{
 		GetTimeRequest request = new GetTimeRequest();
-		PlayFabClientAPI.GetTime(request, delegate(GetTimeResult res)
+		PlayFabClientAPI.GetTime(request, delegate (GetTimeResult res)
 		{
 			DateTime time = res.Time;
 			PlayfabManager.TriggerTimeRequests(true, time);
 			PlayfabManager.isFetchingTime = false;
-		}, delegate(PlayFabError err)
+		}, delegate (PlayFabError err)
 		{
 			UnityEngine.Debug.Log("Playfab: Error while getting time Try#2: " + err.ErrorMessage);
 			PlayfabManager.TriggerTimeRequests(false, DateTime.MinValue);
@@ -1475,7 +1478,7 @@ public static class PlayfabManager
 		//	androidJavaObject,
 		//	"android_id"
 		//});
-        return string.Empty;
+		return string.Empty;
 	}
 
 	public static void RegisterForPushNotifications()
