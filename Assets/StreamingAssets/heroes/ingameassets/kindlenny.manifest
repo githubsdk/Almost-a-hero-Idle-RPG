@@ -1,12 +1,15 @@
 ManifestFileVersion: 0
-CRC: 3633331684
+CRC: 4226682460
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f37b729de95b0ce2f87ff5f566228c79
+    Hash: ad28fafccd3dfa258a985ef0fbd42ad9
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 3d69b3c85586a4b5c782062bb36122c3
+    Hash: 10b00bcc6cde74eae98ca58d0a03fc44
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: ad28fafccd3dfa258a985ef0fbd42ad9
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,17 +29,17 @@ ClassTypes:
 - Class: 49
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
+  Script: {fileID: 11500000, guid: 4dea6743a0e09a28b28868c91e251cca, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
+  Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: abd6666c508f912f384689b2d9b6379a, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 4dea6743a0e09a28b28868c91e251cca, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: ee64b91ccdf7fbac87125bfd4e49a217, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
+  Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 212
@@ -67,4 +70,4 @@ Assets:
 - Assets/Resources/prefabs/projectilesstill/AppleRed.prefab
 - Assets/Bundles/heroes/ingameassets/kindlenny/Texts/skeleton.skel.bytes
 Dependencies:
-- D:/Ali/Almost-a-hero-Idle-RPG/Assets/AaHBundles/spine-shaders
+- D:/Github/Almost-a-hero-Idle-RPG/AssetsBundle/AaHBundles/spine-shaders

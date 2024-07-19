@@ -1,12 +1,15 @@
 ManifestFileVersion: 0
-CRC: 62066348
+CRC: 4129979566
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 8c12cd645c203fb23b9e854fbbe21285
+    Hash: b59df2341e7d5aad4d79fac4cd26069b
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 8a061747675f00855150049f2910f9d7
+    Hash: b7365184425f28b2d99a3380bf132771
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: b59df2341e7d5aad4d79fac4cd26069b
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,13 +29,13 @@ ClassTypes:
 - Class: 49
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: ed763aac04608db2b2bc28deb2a60121, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
@@ -69,4 +72,4 @@ Assets:
 - Assets/Bundles/heroes/ingameassets/druid/Texts/skeleton.skel_d3.bytes
 - Assets/Bundles/heroes/ingameassets/druid/Texts/skeleton.atlas.txt
 Dependencies:
-- D:/Ali/Almost-a-hero-Idle-RPG/Assets/AaHBundles/spine-shaders
+- D:/Github/Almost-a-hero-Idle-RPG/AssetsBundle/AaHBundles/spine-shaders

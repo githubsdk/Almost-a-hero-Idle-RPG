@@ -1,12 +1,15 @@
 ManifestFileVersion: 0
-CRC: 2400827872
+CRC: 2562109134
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: bcf191b57352996bbd04340f014e25d3
+    Hash: 414c9ad446d1bd54459b70dd184de749
   TypeTreeHash:
     serializedVersion: 2
-    Hash: f998632c8767be8a3d8622d1a57e06b9
+    Hash: 57e1efc49ea40ce7ad393856b8c08de8
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 414c9ad446d1bd54459b70dd184de749
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,13 +29,13 @@ ClassTypes:
 - Class: 49
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 995d3b1b591650e02459c70993a9d222, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
@@ -48,4 +51,4 @@ Assets:
 - Assets/Bundles/heroes/ingameassets/warlock/Images/warlock.png
 - Assets/Bundles/heroes/ingameassets/warlock/Materials/warlock_Material.mat
 Dependencies:
-- D:/Ali/Almost-a-hero-Idle-RPG/Assets/AaHBundles/spine-shaders
+- D:/Github/Almost-a-hero-Idle-RPG/AssetsBundle/AaHBundles/spine-shaders

@@ -1,12 +1,15 @@
 ManifestFileVersion: 0
-CRC: 1249052150
+CRC: 646399623
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c1119aa143edf81262530ac968d0726e
+    Hash: 67a5b5824bbaa17ce450a0c0b8a6add1
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 917c1b0cbab741777d038da1e285ea0c
+    Hash: 315cb4119e4681e3c7ac0ad698aa016e
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 67a5b5824bbaa17ce450a0c0b8a6add1
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,15 +29,15 @@ ClassTypes:
 - Class: 49
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: f23843e9e13d92a91150276245784a6b, type: 3}
+  Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: abd6666c508f912f384689b2d9b6379a, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: abd6666c508f912f384689b2d9b6379a, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
+  Script: {fileID: 11500000, guid: f23843e9e13d92a91150276245784a6b, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
@@ -50,4 +53,4 @@ Assets:
 - Assets/Bundles/heroes/ingameassets/horatio/MonoBehaviour/skeleton2_Atlas.asset
 - Assets/Bundles/heroes/ingameassets/horatio/Materials/skeleton2_Material.mat
 Dependencies:
-- D:/Ali/Almost-a-hero-Idle-RPG/Assets/AaHBundles/spine-shaders
+- D:/Github/Almost-a-hero-Idle-RPG/AssetsBundle/AaHBundles/spine-shaders

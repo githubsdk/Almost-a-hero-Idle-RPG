@@ -1,12 +1,15 @@
 ManifestFileVersion: 0
-CRC: 894615561
+CRC: 4119356637
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fbddeed6cf94c77b04f7f9d85a9062b2
+    Hash: 27c85423c6dce19123587f3301ec5c16
   TypeTreeHash:
     serializedVersion: 2
-    Hash: fbbb99d154c935eed8cbca671009e326
+    Hash: 9bf9304ca3a63cbeb1c5601b1d053485
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 27c85423c6dce19123587f3301ec5c16
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -28,13 +31,13 @@ ClassTypes:
 - Class: 83
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: aa19e2328b1bccc80658626173c347af, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
@@ -58,4 +61,4 @@ Assets:
 - Assets/Bundles/heroes/druid/Materials/Ron_Material.mat
 - Assets/Bundles/heroes/druid/Sounds/Item Upgrade 2_6.wav
 Dependencies:
-- D:/Ali/Almost-a-hero-Idle-RPG/Assets/AaHBundles/spine-shaders
+- D:/Github/Almost-a-hero-Idle-RPG/AssetsBundle/AaHBundles/spine-shaders

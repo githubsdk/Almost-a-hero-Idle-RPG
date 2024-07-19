@@ -1,12 +1,15 @@
 ManifestFileVersion: 0
-CRC: 414155216
+CRC: 827628779
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 36e350c6c780c1be3db9caa89a147d18
+    Hash: d8ba66836f08a5f91b83988c7583ad86
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 956a30e090eaae286c14c7fcfb526e13
+    Hash: 50fdc422805e682b02af0cffc93067af
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: d8ba66836f08a5f91b83988c7583ad86
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,15 +29,15 @@ ClassTypes:
 - Class: 49
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: abd6666c508f912f384689b2d9b6379a, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 4c2c5929082fd741a9af7095f7688322, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: abd6666c508f912f384689b2d9b6379a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 212
@@ -64,4 +67,4 @@ Assets:
 - Assets/Bundles/heroes/ingameassets/goblin/MonoBehaviour/skeleton_Atlas.asset
 - Assets/Bundles/heroes/ingameassets/goblin/Images/bomb.png
 Dependencies:
-- D:/Ali/Almost-a-hero-Idle-RPG/Assets/AaHBundles/spine-shaders
+- D:/Github/Almost-a-hero-Idle-RPG/AssetsBundle/AaHBundles/spine-shaders

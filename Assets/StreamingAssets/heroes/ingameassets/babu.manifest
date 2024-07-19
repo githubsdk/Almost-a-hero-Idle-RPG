@@ -1,12 +1,15 @@
 ManifestFileVersion: 0
-CRC: 173797761
+CRC: 3923223705
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c7e41126db125d256c556c3ee10c6d75
+    Hash: 6580009a3678ae6d8199bd5407843eff
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 14b9b67d09db88cfa88440e65747bf6b
+    Hash: 9bc523a09609e7aedb08189344cd4ba0
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 6580009a3678ae6d8199bd5407843eff
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,17 +29,17 @@ ClassTypes:
 - Class: 49
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 084342afecbe7411db24cf1f64447717, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: abd6666c508f912f384689b2d9b6379a, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4dea6743a0e09a28b28868c91e251cca, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: abd6666c508f912f384689b2d9b6379a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 212
@@ -71,4 +74,4 @@ Assets:
 - Assets/Resources/prefabs/projectilesanim/SmartProjectileOrnamentDrop.prefab
 - Assets/Bundles/heroes/ingameassets/babu/Images/teaCup.png
 Dependencies:
-- D:/Ali/Almost-a-hero-Idle-RPG/Assets/AaHBundles/spine-shaders
+- D:/Github/Almost-a-hero-Idle-RPG/AssetsBundle/AaHBundles/spine-shaders

@@ -1,12 +1,15 @@
 ManifestFileVersion: 0
-CRC: 411523527
+CRC: 4177429626
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 501bc9ae2b8f200be5861401e695a1f8
+    Hash: 1cf31af97e82d10eb017e1e07dd0dfbe
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 11f4db80a7b0decccc14a25d7ac10d49
+    Hash: 602b34722ec8f60da89113103887e6b2
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 1cf31af97e82d10eb017e1e07dd0dfbe
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,15 +29,15 @@ ClassTypes:
 - Class: 49
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d4853b7c14531573e3d16c75bc7b7714, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 688fa1156c971f5e084ec1434016e0db, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
@@ -55,4 +58,4 @@ Assets:
 - Assets/Bundles/backgrounds/background-9/Texts/skeleton.skel.bytes
 - Assets/Bundles/backgrounds/background-9/Materials/skeleton_Material.mat
 Dependencies:
-- D:/Ali/Almost-a-hero-Idle-RPG/Assets/AaHBundles/spine-shaders
+- D:/Github/Almost-a-hero-Idle-RPG/AssetsBundle/AaHBundles/spine-shaders

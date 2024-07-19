@@ -1,12 +1,15 @@
 ManifestFileVersion: 0
-CRC: 670455486
+CRC: 738177333
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 39bc5298a349f284d7660b97f472532e
+    Hash: 9bbd6ed514c67f4d8294c31f6be6b370
   TypeTreeHash:
     serializedVersion: 2
-    Hash: dbd0b4a6fbec16f5cd7c535e4a52284f
+    Hash: 727f3af91ea24772fba00f420440fe37
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 9bbd6ed514c67f4d8294c31f6be6b370
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,15 +29,15 @@ ClassTypes:
 - Class: 49
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 491cbc8ebaf0a0b48bb46d8649927d5f, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4dea6743a0e09a28b28868c91e251cca, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b938722d76938cc7419bd542430b5629, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 212
@@ -58,4 +61,4 @@ Assets:
 - Assets/Bundles/heroes/ingameassets/wendle/Images/skeleton.png
 - Assets/Bundles/heroes/ingameassets/wendle/Images/wendle_projectile_1.png
 Dependencies:
-- D:/Ali/Almost-a-hero-Idle-RPG/Assets/AaHBundles/spine-shaders
+- D:/Github/Almost-a-hero-Idle-RPG/AssetsBundle/AaHBundles/spine-shaders

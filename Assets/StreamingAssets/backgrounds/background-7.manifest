@@ -1,12 +1,15 @@
 ManifestFileVersion: 0
-CRC: 3317664401
+CRC: 2338240181
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ae286cdd43713e8959a2a806cf54d24e
+    Hash: 84abc8f27767218e9a32075344b30c8f
   TypeTreeHash:
     serializedVersion: 2
-    Hash: f32f3c1065232280047af31837b5b9e4
+    Hash: bbe3fafa635a96422e73cf1a7afee55b
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 84abc8f27767218e9a32075344b30c8f
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -22,13 +25,13 @@ ClassTypes:
 - Class: 33
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 633dfa9ce20d085302ee4f50dc88ffff, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d4853b7c14531573e3d16c75bc7b7714, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 688fa1156c971f5e084ec1434016e0db, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: bfce3793e7b4c3dac80aeb2c1d11f4af, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
@@ -43,4 +46,4 @@ Assets:
 - Assets/Bundles/backgrounds/background-7/Resources/bundles/backgrounds/BackgroundBundle-7.asset
 - Assets/Bundles/backgrounds/background-7/Images/bg_gog_02.png
 Dependencies:
-- D:/Ali/Almost-a-hero-Idle-RPG/Assets/AaHBundles/backgrounds/background-common
+- D:/Github/Almost-a-hero-Idle-RPG/AssetsBundle/AaHBundles/backgrounds/background-common
